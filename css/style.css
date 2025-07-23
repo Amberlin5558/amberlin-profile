@@ -1,25 +1,69 @@
+/* === 全局样式 === */
 body {
-  font-family: "Helvetica", sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 0 20px;
-  background-color: #f8f9fa;
+  background-color: #f9f9f9;
   color: #333;
 }
 
-header {
+/* === 顶部Bar 和 悬浮头像 === */
+.top-bar {
   background: #e6c1de;
-  color: hsl(0, 44%, 95%);
-  padding: 20px 0;
-  text-align: center;
+  height: 120px;
+  width: 100%;
 }
 
-h1 {
+.avatar {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* === 主要内容区 === */
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.profile-intro {
+  padding-top: 90px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-intro h1 {
   margin: 0;
+  font-size: 2em;
+}
+
+.profile-intro p {
+  font-size: 1.1em;
+  color: #666;
 }
 
 section {
-  margin: 20px 0;
+  margin-bottom: 40px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #e6c1de;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -28,33 +72,177 @@ ul {
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 10px;
-  color: #dcaed4;
-}
+/* === 按钮样式 === */
 .btn {
   display: inline-block;
   margin-left: 10px;
-  padding: 4px 10px;
-  background-color: #dcaed4;
+  padding: 5px 12px;
+  background-color: #e6c1de;
   color: white;
-  border-radius: 4px;
+  border-radius: 5px;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  transition: background-color 0.3s;
 }
-
 .btn:hover {
   background-color: #dcaed4;
 }
 
-.profile
-{
-    display: flex;
-    justify-content: space-between; /* 这会将项目推向两端 */
-    align-items: center;
+.download-section {
+  text-align: center;
+}
+.download-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* === 技能图表样式 (已优化) === */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 25px;
+}
+.skills-container {
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none; /* 去掉双重阴影 */
+  margin: 0; /* 覆盖旧的margin */
+}
+.skills-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.skills-container h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.1em;
+}
+.skills-list-combined {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px 20px;
+}
+.info-block {
+  padding: 10px 0;
+}
+.info-block h3 {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 1.15em;
+  margin: 0 0 8px 0;
+}
+.info-block h3 i {
+  font-size: 1.1em;
+  color: #333;
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+.info-block p, .info-block li {
+  color: #555;
+  line-height: 1.5;
+  font-size: 1.05em;
+  margin: 0;
+  padding-left: 32px;
+}
+.info-block ul {
+  padding: 0;
+  margin: 0;
+}
+.info-block li {
+  margin-bottom: 5px;
+}
+.color-border-1 { border-top: 4px solid #4D96FF; }
+.color-border-2 { border-top: 4px solid #6BCB77; }
+.color-border-3 { border-top: 4px solid #FFD93D; }
+
+/* === "More About Me" (页脚链接) 的新样式 === */
+.more-links-section {
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  padding-top: 20px;
+}
+.more-links-section ul {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.more-links-section a {
+  display: block;
+  margin-bottom: 15px;
+  padding: 20px 25px;
+  background-color: #e6c1de;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.more-links-section a:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* === 页脚 === */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: #aaa;
+}
+
+/* === 响应式设计 (手机端适配) === */
+@media (max-width: 992px) {
+  .skills-grid-container {
+    grid-template-columns: 1fr; /* 在平板上变为单列 */
+  }
+  .skills-container {
+    height: auto;
+    min-height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    height: 90px;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    top: 90px;
+    border-width: 4px;
+  }
+  .profile-intro {
+    padding-top: 70px;
+  }
+  .profile-intro h1 {
+    font-size: 1.5em;
+  }
+  .profile-intro p {
+    font-size: 0.9em;
+  }
+  section {
+    padding: 20px;
+  }
 }
