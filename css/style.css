@@ -8,8 +8,8 @@ body {
 }
 
 header {
-  background: #1f88a3;
-  color: white;
+  background: #e6c1de;
+  color: hsl(0, 44%, 95%);
   padding: 20px 0;
   text-align: center;
 }
@@ -35,13 +35,13 @@ footer {
   text-align: center;
   margin-top: 40px;
   padding: 10px;
-  color: #777;
+  color: #dcaed4;
 }
 .btn {
   display: inline-block;
   margin-left: 10px;
   padding: 4px 10px;
-  background-color: #007acc;
+  background-color: #dcaed4;
   color: white;
   border-radius: 4px;
   text-decoration: none;
@@ -49,5 +49,12 @@ footer {
 }
 
 .btn:hover {
-  background-color: #005f99;
+  background-color: #dcaed4;
+}
+
+.profile
+{
+    display: flex;
+    justify-content: space-between; /* 这会将项目推向两端 */
+    align-items: center;
 }
