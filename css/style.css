@@ -1,7 +1,7 @@
-/* === 全局样式 === */
+/* === 全局样式与间距优化 === */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.6;
+  line-height: 1.65; /* 稍微增加行高，提升大段文字的可读性 */
   margin: 0;
   background-color: #f9f9f9;
   color: #333;
@@ -38,11 +38,11 @@ body {
 .profile-intro {
   padding-top: 90px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px; /* 增加了与下方内容的距离 */
 }
 
 .profile-intro h1 {
-  margin: 0;
+  margin: 0 0 10px 0; /* 为标题和下方的联系信息增加一点间距 */
   font-size: 2em;
 }
 
@@ -52,18 +52,27 @@ body {
 }
 
 section {
-  margin-bottom: 40px;
+  margin-bottom: 45px; /* 统一并微调模块间距 */
   background-color: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 30px; /* 增加卡片内部的“呼吸空间” */
+  border-radius: 12px; /* 边角更圆润一些 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* 阴影更柔和 */
 }
 
 h2 {
   margin-top: 0;
   border-bottom: 2px solid #e6c1de;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 15px; /* 增加标题和下方内容的距离 */
+  margin-bottom: 25px; /* 增加标题和下方内容的距离 */
+}
+
+/* 【核心修改】为全局的 p 和 li 增加底部间距，解决文字拥挤问题 */
+p, li {
+  margin-bottom: 1em; /* 1em 等于当前元素的字体大小，这是一个相对单位 */
+}
+/* 去掉最后一个元素的下边距，让排版更规整 */
+p:last-child, li:last-child {
+  margin-bottom: 0;
 }
 
 ul {
@@ -71,9 +80,6 @@ ul {
   padding-left: 0;
 }
 
-li {
-  margin-bottom: 15px;
-}
 
 /* === 按钮样式 === */
 .btn {
@@ -109,21 +115,25 @@ li {
   transform: translateY(-2px);
 }
 
-/* === 技能图表样式 (已优化) === */
+/* === 技能模块优化 (解决拥挤和高度问题) === */
 .skills-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
   gap: 25px;
 }
 .skills-container {
+  display: flex; /* 使用 Flex 布局让内容垂直分布 */
+  flex-direction: column;
   padding: 20px;
   border: 1px solid #eee;
   border-radius: 10px;
   background-color: #fff;
-  height: 320px;
+  /* 【核心修改】移除了固定的 height: 320px; */
+  /* 这允许卡片根据内容自由伸展，解决了内容塞不下的问题！*/
+  /* Grid 布局默认会使同一行的项目等高，所以外观依然整齐。*/
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: none; /* 去掉双重阴影 */
-  margin: 0; /* 覆盖旧的margin */
+  box-shadow: none;
+  margin: 0;
 }
 .skills-container:hover {
   transform: translateY(-8px);
@@ -137,13 +147,14 @@ li {
   font-size: 1.1em;
 }
 .skills-list-combined {
+  flex-grow: 1; /* 让这个容器填满剩余空间 */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 10px 20px;
+  justify-content: center; /* 内容垂直居中 */
+  padding: 0 15px;
 }
 .info-block {
-  padding: 10px 0;
+  padding: 12px 0; /* 增加了信息块之间的垂直距离 */
 }
 .info-block h3 {
   display: flex;
@@ -162,16 +173,13 @@ li {
 .info-block p, .info-block li {
   color: #555;
   line-height: 1.5;
-  font-size: 1.05em;
-  margin: 0;
+  font-size: 1em; /* 稍微调整字号以获得更好的空间感 */
+  margin: 0 0 5px 0; /* 【核心修改】为列表项也增加间距 */
   padding-left: 32px;
 }
 .info-block ul {
   padding: 0;
   margin: 0;
-}
-.info-block li {
-  margin-bottom: 5px;
 }
 .color-border-1 { border-top: 4px solid #4D96FF; }
 .color-border-2 { border-top: 4px solid #6BCB77; }
@@ -218,12 +226,11 @@ footer {
   .skills-grid-container {
     grid-template-columns: 1fr; /* 在平板上变为单列 */
   }
-  .skills-container {
-    height: auto;
-    min-height: 300px;
-  }
 }
 @media (max-width: 768px) {
+  body {
+    line-height: 1.6; /* 手机端行高可以稍小一些 */
+  }
   .top-bar {
     height: 90px;
   }
