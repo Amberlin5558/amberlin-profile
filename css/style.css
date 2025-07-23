@@ -9,15 +9,16 @@ body {
 
 /* === 全新页眉设计 === */
 .main-header {
-  padding: 40px 20px 0; /* 在头像上方和两侧留出空间 */
+  padding: 40px 20px 0;
   text-align: center;
 }
+/* 【核心修改1】头像变为“鹅蛋形” */
 .avatar {
   display: block;
-  margin: 0 auto 25px; /* 居中并与下方 bar 拉开距离 */
-  width: 200px;  /* 宽度 */
-  height: 160px; /* 高度，小于宽度形成横向椭圆 */
-  border-radius: 50%; /* CSS 魔法：宽高不等时，50%的圆角会形成椭圆 */
+  margin: 0 auto 25px;
+  width: 150px;  /* 宽度小于高度 */
+  height: 180px; /* 高度大于宽度 */
+  border-radius: 50%; /* 这样就会形成一个竖向的椭圆 */
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -45,7 +46,7 @@ body {
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px; /* 内容区与页眉/页脚的距离 */
+  padding: 40px 20px;
 }
 section {
   margin-bottom: 45px;
@@ -71,11 +72,11 @@ ul {
   padding-left: 0;
 }
 
-/* === 全新对齐列表布局 (核心) === */
+/* === 全新对齐列表布局 === */
 .structured-list li {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* 左侧占3份，右侧占1份 */
-  gap: 20px; /* 列之间的间距 */
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #f0f0f0;
@@ -86,8 +87,8 @@ ul {
 }
 .item-primary {
   display: flex;
-  flex-direction: column; /* 让主内容垂直排列 */
-  gap: 8px; /* 主内容内部各项的间距 */
+  flex-direction: column;
+  gap: 8px;
 }
 .item-primary b {
   font-size: 1.1em;
@@ -103,7 +104,7 @@ ul {
   text-align: right;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* 让次要内容靠右对齐 */
+  align-items: flex-end;
   justify-content: flex-start;
   gap: 8px;
   font-size: 0.9em;
@@ -115,7 +116,7 @@ ul {
   display: inline-block;
   padding: 5px 12px;
   background-color: #e6c1de;
-  color: white !important; /* 强制覆盖链接默认颜色 */
+  color: white !important;
   border-radius: 5px;
   text-decoration: none;
   font-size: 0.85em;
@@ -126,30 +127,33 @@ ul {
   background-color: #dcaed4;
 }
 
-/* === 技能模块优化 (2列布局) === */
+/* === 技能模块优化 (最终版) === */
 .skills-grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 两列布局 */
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 .skills-container {
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   border: 1px solid #eee;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 第三项（信息列表）横跨两列 */
-.skills-list-combined {
-  grid-column: 1 / -1; 
-  flex-direction: row; /* 横向排列 */
-  justify-content: space-between; /* 均匀分布 */
-  align-items: stretch;
+/* 【核心修改2】为雷达图卡片设置一个合适的高度，并去掉 flex 布局 */
+.skills-container:not(.skills-list-combined) {
+  height: 350px; /* 一个恰到好处的高度 */
 }
 .skills-container:not(.skills-list-combined):hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+/* 第三项（信息列表）横跨两列 */
+.skills-list-combined {
+  grid-column: 1 / -1; 
+  display: flex; /* 这里保留 flex，用于内部信息块的排列 */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .skills-container h3 {
   text-align: center;
@@ -160,7 +164,7 @@ ul {
 }
 .info-block {
   padding: 15px;
-  flex-basis: 32%; /* 每个信息块大约占1/3宽度 */
+  flex-basis: 32%;
   display: flex;
   flex-direction: column;
 }
@@ -241,22 +245,24 @@ footer {
 /* === 响应式设计 (手机端适配) === */
 @media (max-width: 768px) {
   .structured-list li {
-    grid-template-columns: 1fr; /* 在手机上变为单列堆叠 */
+    grid-template-columns: 1fr;
     gap: 10px;
   }
   .item-secondary {
     text-align: left;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: wrap; /* 允许按钮换行 */
+    flex-wrap: wrap;
   }
-  .skills-grid-container, .skills-list-combined {
-    grid-template-columns: 1fr; /* 所有技能模块都变为单列 */
+  .skills-grid-container {
+    grid-template-columns: 1fr;
+  }
+  .skills-list-combined {
     flex-direction: column;
   }
   .avatar {
-    width: 150px;
-    height: 120px;
+    width: 120px;
+    height: 144px; /* 保持竖向椭圆比例 */
   }
   .header-info-bar h1 { font-size: 1.5em; }
   .header-info-bar p { font-size: 0.9em; }
