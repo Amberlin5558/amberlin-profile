@@ -241,9 +241,38 @@ footer {
 
 /* === Thesis Page 专属样式 === */
 .thesis-header .header-info-bar { position: relative; padding: 15px 20px; }
-.back-to-home-btn { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: white; text-decoration: none; font-size: 1em; padding: 8px 15px; border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; transition: background-color 0.3s; }
-.back-to-home-btn:hover { background-color: rgba(255,255,255,0.1); }
-.back-to-home-btn i { margin-right: 8px; }
+./* ======================================================== */
+/*          用下面的代码替换您的旧返回按钮 CSS                */
+/* ======================================================== */
+
+/* --- Thesis 页面的返回按钮 (优化后) --- */
+.back-to-home-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* --- 【核心修改】颜色和尺寸 --- */
+  background-color: #f5f5dc; /* 米黄色 (Beige) */
+  color: #5d4037;           /* 深棕色文字，搭配米黄色更显质感 */
+  font-size: 0.85em;         /* 缩小字体 */
+  padding: 6px 12px;         /* 缩小内边距，让按钮变小 */
+  
+  text-decoration: none;
+  border: none;              /* 去掉边框 */
+  border-radius: 6px;        /* 调整圆角以匹配新尺寸 */
+  transition: all 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+  background-color: #eaeac9; /* 鼠标悬浮时颜色加深一点 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 添加一点微弱的阴影 */
+  transform: translateY(-52%); /* 轻微上移，增加动感 */
+}
+
+.back-to-home-btn i {
+  margin-right: 6px; /* 调整图标和文字的间距 */
+}
 .project-summary p { font-size: 1.1em; line-height: 1.7; }
 .tech-stack-highlight { margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #e6c1de; border-radius: 4px; }
 .contributions-list { padding-left: 0; list-style-type: none; }
