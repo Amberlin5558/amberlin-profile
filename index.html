@@ -4,94 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amber Lin</title>
-  <!-- 引入样式文件 -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- 引入 Font Awesome 图标库 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <!-- 1. 这是背景里的粉色 bar -->
-  <header class="top-bar"></header>
-
-  <!-- 2. 头像被移到这里，独立出来，用于实现悬浮效果 -->
-  <img src="images/avatar.jpg" alt="林珈卉头像" class="avatar" />
-
-  <!-- 3. 所有页面内容都包裹在一个 main 容器里 -->
-  <main class="content-wrapper">
-    <section class="profile-intro">
+  <!-- 1. 全新的页眉区域 -->
+  <header class="main-header">
+    <img src="images/avatar.jpg" alt="林珈卉头像" class="avatar" />
+    <div class="header-info-bar">
       <h1>Amber Lin （Lin,Chia-Hui）</h1>
       <p>📍 Shanghai | 📧 amberlin554@126.com | 📱 +86 13601820692</p>
-    </section>
+    </div>
+  </header>
 
+  <!-- 2. 所有页面内容包裹在 main 容器里 -->
+  <main class="content-wrapper">
     <section>
       <h2>About Me</h2>
-      <p>With a deep passion for user advocacy, I specialize in transforming customer needs into products celebrated for their value and experience. My Master's degree in Global Business and Decision Analysis sharpens my strategic thinking, enabling me to devise go-to-market strategies like the one for Pop Mart's U.S. expansion. I am experienced in both market analysis and cross-functional leadership, effectively bridging IT, marketing, and sales to deliver results. My time at Apple proved my ability to solve core user issues, leading to significant increases in sales and customer loyalty. I am a product owner at heart, dedicated to navigating the complete lifecycle from concept to continuous enhancement.</p>
+      <!-- 精简后的 "About Me" -->
+      <p>A user-centric product enthusiast with a Master's in Global Business and Decision Analysis. I excel at translating user needs into valuable products, blending strategic market analysis with hands-on, cross-functional leadership. My experience includes devising go-to-market strategies and driving tangible growth in sales and customer loyalty at companies like Apple.</p>
     </section>
 
+    <!-- 3. 全新对齐布局的教育背景 -->
     <section>
       <h2>🎓 Education</h2>
-      <ul>
-        <li><b>The Hong Kong Polytechnic University</b> - MSc in Global Business and Decision Analytics - QS 54 - Hong Kong | Sep 2024 - Oct 2025</li>
-        <li><b>- Specialized in Project Management, Business Analysis, Global Sourcing and Supply Chain, Risk Management, etc., | GPA 3.0</b></li>
-        <li><b>East China University of Science and Technology</b> - BEng (BS) in Computer Science and Technology - 211 - Shanghai | Sep 2018 - June 2022</li>
-        <li><b>- Core courses: Software Project Management, E-commerce, Database Management, Python, SQL</b></li>
-        <li>Graduation Thesis: <a href="thesis.html" target="_blank" class="btn">Click to view details</a></li>
+      <ul class="structured-list">
+        <li>
+          <div class="item-primary">
+            <b>The Hong Kong Polytechnic University</b> - MSc in Global Business and Decision Analytics
+            <span>- Specialized in Project Management, Business Analysis, Global Sourcing and Supply Chain, Risk Management, etc., | GPA 3.0</span>
+          </div>
+          <div class="item-secondary">
+            <span>Sep 2024 - Oct 2025</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-primary">
+            <b>East China University of Science and Technology</b> - BEng (BS) in Computer Science and Technology
+            <span>- Core courses: Software Project Management, E-commerce, Database Management, Python, SQL</span>
+            <span>- Graduation Thesis: <a href="thesis.html" target="_blank" class="btn">Click to view details</a></span>
+          </div>
+          <div class="item-secondary">
+            <span>Sep 2018 - June 2022</span>
+          </div>
+        </li>
       </ul>
     </section>
 
+    <!-- 4. 全新对齐布局的实习经历 -->
     <section>
       <h2>💼 Internship Experience</h2>
-      <ul>
-        <li><b>Taiwan Zhanzhou Co., Ltd | Business Analysis Intern | Taipei, Taiwan | Jan 2023 - Oct 2023</b></li>
-        <li><b>🌟 User Experience & Business Optimization:</b> Drove product optimization by analyzing customer behavior data to identify key pain points. Leveraged A/B testing to validate solutions, resulting in a 20% increase in marketing ROI.</li>
-        <li><b>🌟 Cross-functional Collaboration:</b> Fostered data-driven collaboration between IT and business units, streamlining workflows and successfully reducing the project development cycle by 30%.</li>
-        <li><b>Apple Retail Store (Apple Inc.) ｜ Sales Intern | Shanghai, China | Aug 2021 - Oct 2021</b></li>
-        <li><b>🌟 Customer Experience & Store Growth:</b> Drove a 15% outperformance on sales targets and a 10% increase in customer return rate by collaborating with the store team to analyze customer feedback and optimize the service workflow.</li>
-        <li><b>Ctrip ｜ Business Operations Intern | Shanghai, China | July 2025 - </b></li>
-        <li><b>🌟 Product Strategy & Market Expansion:</b> Led market research to identify and capitalize on underserved day-tour niches, such as in-depth local experiences and special interest tours. Formulated and executed a new product strategy.</li>
+      <ul class="structured-list">
+        <li>
+          <div class="item-primary">
+            <b>Taiwan Zhanzhou Co., Ltd</b> | Business Analysis Intern
+            <span class="item-description"><b>🌟 User Experience & Business Optimization:</b> Drove product optimization by analyzing customer behavior data to identify key pain points. Leveraged A/B testing to validate solutions, resulting in a 20% increase in marketing ROI.</span>
+            <span class="item-description"><b>🌟 Cross-functional Collaboration:</b> Fostered data-driven collaboration between IT and business units, streamlining workflows and successfully reducing the project development cycle by 30%.</span>
+          </div>
+          <div class="item-secondary">
+            <span>Taipei, Taiwan</span>
+            <span>Jan 2023 - Oct 2023</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-primary">
+            <b>Apple Retail Store (Apple Inc.)</b> | Sales Intern
+            <span class="item-description"><b>🌟 Customer Experience & Store Growth:</b> Drove a 15% outperformance on sales targets and a 10% increase in customer return rate by collaborating with the store team to analyze customer feedback and optimize the service workflow.</span>
+          </div>
+          <div class="item-secondary">
+            <span>Shanghai, China</span>
+            <span>Aug 2021 - Oct 2021</span>
+          </div>
+        </li>
+         <li>
+          <div class="item-primary">
+            <b>Ctrip</b> | Business Operations Intern
+            <span class="item-description"><b>🌟 Product Strategy & Market Expansion:</b> Led market research to identify and capitalize on underserved day-tour niches, such as in-depth local experiences and special interest tours. Formulated and executed a new product strategy.</span>
+          </div>
+          <div class="item-secondary">
+            <span>Shanghai, China</span>
+            <span>July 2025 - </span>
+          </div>
+        </li>
       </ul>
     </section>
 
+    <!-- 5. 全新对齐布局的学术项目 -->
     <section>
       <h2>📌 Relevant Academic Projects</h2>
-      <ul>
-        <li>Digital Economy & Consumer Behavior — Nezha 2 Box Office Analysis | Hong Kong | Apr 2025 <a href="project1.html" class="btn">Details</a></li>
-        <li>Tesla Risk Management Case ｜ Hong Kong | Apr 2025 <a href="project2.html" class="btn">Details</a></li>
-        <li>Cross-border Business Decision — Pop Mart U.S. Expansion ｜ Hong Kong | Dec 2024 <a href="project3.html" class="btn">Details</a></li>
+      <ul class="structured-list">
+        <li>
+          <div class="item-primary"><b>Digital Economy & Consumer Behavior</b> — Nezha 2 Box Office Analysis</div>
+          <div class="item-secondary">
+            <span>Hong Kong | Apr 2025</span>
+            <a href="project1.html" class="btn">Details</a>
+          </div>
+        </li>
+        <li>
+          <div class="item-primary"><b>Tesla Risk Management Case</b></div>
+          <div class="item-secondary">
+            <span>Hong Kong | Apr 2025</span>
+            <a href="project2.html" class="btn">Details</a>
+          </div>
+        </li>
+        <li>
+          <div class="item-primary"><b>Cross-border Business Decision</b> — Pop Mart U.S. Expansion</div>
+          <div class="item-secondary">
+            <span>Hong Kong | Dec 2024</span>
+            <a href="project3.html" class="btn">Details</a>
+          </div>
+        </li>
       </ul>
     </section>
 
+    <!-- 6. 全新布局的技能模块 -->
     <section>
       <h2>🧠 Skills & Certificates</h2>
       <div class="skills-grid-container">
-        <!-- 第一个卡片：核心能力雷达图 -->
         <div class="skills-container">
           <h3>Core Competencies</h3>
           <canvas id="coreSkillsChart"></canvas>
         </div>
-        <!-- 第二个卡片：专业技能雷达图 -->
         <div class="skills-container">
           <h3>Technical Proficiencies</h3>
           <canvas id="techSkillsChart"></canvas>
         </div>
-        <!-- 第三个卡片：包含三个信息块的组合 -->
         <div class="skills-container skills-list-combined">
-            <div class="info-block color-border-1">
-                <h3><i class="fa-solid fa-share-nodes"></i> Social Media</h3>
-                <p>Managed a Douyin (TikTok) account, growing it to <strong>38,000+</strong> followers.</p>
-            </div>
-            <div class="info-block color-border-2">
-                <h3><i class="fa-solid fa-language"></i> Languages</h3>
-                <p>Chinese (Native), English (Proficient), Japanese (Beginner).</p>
-            </div>
-            <div class="info-block color-border-3">
-                <h3><i class="fa-solid fa-award"></i> Certificates</h3>
-                <ul>
-                    <li>Google Data Analytics (2025)</li>
-                    <li>IBM Product Manager (2025)</li>
-                    <li>Python Programming (2020)</li>
-                </ul>
-            </div>
+          <div class="info-block color-border-1">
+            <h3><i class="fa-solid fa-share-nodes"></i> Social Media</h3>
+            <p>Managed a Douyin (TikTok) account, growing it to <strong>38,000+</strong> followers.</p>
+          </div>
+          <div class="info-block color-border-2">
+            <h3><i class="fa-solid fa-language"></i> Languages</h3>
+            <p>Chinese (Native), English (Proficient), Japanese (Beginner).</p>
+          </div>
+          <div class="info-block color-border-3">
+            <h3><i class="fa-solid fa-award"></i> Certificates</h3>
+            <ul>
+              <li>Google Data Analytics (2025)</li>
+              <li>IBM Product Manager (2025)</li>
+              <li>Python Programming (2020)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -114,18 +168,9 @@
     <p>© 2025 Lin,Chia-Hui Amber Lin</p>
   </footer>
 
-  <!-- Chart.js 库的引用和图表创建脚本 -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-      // 1. 核心能力图表数据
-      const coreSkillsData = { labels: ['Project Mgmt', 'Supply Chain', 'E-commerce', 'Localization', 'Market Analysis', 'Collaboration'], datasets: [{ label: 'Core Competencies', data: [9, 8, 8, 9, 7, 10], fill: true, backgroundColor: 'rgba(54, 162, 235, 0.2)', borderColor: 'rgb(54, 162, 235)', pointBackgroundColor: 'rgb(54, 162, 235)', pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: 'rgb(54, 162, 235)' }] };
-      // 2. 专业技能图表数据
-      const techSkillsData = { labels: ['Python', 'SQL', 'Excel', 'SEO/SEM', 'Figma', 'Office Suite'], datasets: [{ label: 'Technical Proficiencies', data: [7, 8, 9, 8, 7, 10], fill: true, backgroundColor: 'rgba(255, 99, 132, 0.2)', borderColor: 'rgb(255, 99, 132)', pointBackgroundColor: 'rgb(255, 99, 132)', pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: 'rgb(255, 99, 132)' }] };
-      // 图表通用配置
-      const commonConfig = { type: 'radar', options: { responsive: true, maintainAspectRatio: false, scales: { r: { angleLines: { display: true }, suggestedMin: 0, suggestedMax: 10, ticks: { stepSize: 2 } } }, elements: { line: { borderWidth: 3 } } } };
-      // 创建图表
-      new Chart(document.getElementById('coreSkillsChart'), { ...commonConfig, data: coreSkillsData });
-      new Chart(document.getElementById('techSkillsChart'), { ...commonConfig, data: techSkillsData });
+      const coreSkillsData={labels:['Project Mgmt','Supply Chain','E-commerce','Localization','Market Analysis','Collaboration'],datasets:[{label:'Core Competencies',data:[9,8,8,9,7,10],fill:!0,backgroundColor:'rgba(54, 162, 235, 0.2)',borderColor:'rgb(54, 162, 235)',pointBackgroundColor:'rgb(54, 162, 235)',pointBorderColor:'#fff',pointHoverBackgroundColor:'#fff',pointHoverBorderColor:'rgb(54, 162, 235)'}]},techSkillsData={labels:['Python','SQL','Excel','SEO/SEM','Figma','Office Suite'],datasets:[{label:'Technical Proficiencies',data:[7,8,9,8,7,10],fill:!0,backgroundColor:'rgba(255, 99, 132, 0.2)',borderColor:'rgb(255, 99, 132)',pointBackgroundColor:'rgb(255, 99, 132)',pointBorderColor:'#fff',pointHoverBackgroundColor:'#fff',pointHoverBorderColor:'rgb(255, 99, 132)'}]},commonConfig={type:'radar',options:{responsive:!0,maintainAspectRatio:!1,scales:{r:{angleLines:{display:!0},suggestedMin:0,suggestedMax:10,ticks:{stepSize:2}}},elements:{line:{borderWidth:3}}}};new Chart(document.getElementById('coreSkillsChart'),{...commonConfig,data:coreSkillsData}),new Chart(document.getElementById('techSkillsChart'),{...commonConfig,data:techSkillsData});
   </script>
 </body>
 </html>

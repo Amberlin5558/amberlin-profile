@@ -1,104 +1,199 @@
 /* === 全局样式与间距优化 === */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.65; /* 稍微增加行高，提升大段文字的可读性 */
+  line-height: 1.65;
   margin: 0;
   background-color: #f9f9f9;
   color: #333;
 }
 
-/* === 顶部Bar 和 悬浮头像 === */
-.top-bar {
-  background: #e6c1de;
-  height: 120px;
-  width: 100%;
+/* === 全新页眉设计 === */
+.main-header {
+  padding: 40px 20px 0; /* 在头像上方和两侧留出空间 */
+  text-align: center;
 }
-
 .avatar {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto 25px; /* 居中并与下方 bar 拉开距离 */
+  width: 200px;  /* 宽度 */
+  height: 160px; /* 高度，小于宽度形成横向椭圆 */
+  border-radius: 50%; /* CSS 魔法：宽高不等时，50%的圆角会形成椭圆 */
   object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.header-info-bar {
+  background-color: #e6c1de;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header-info-bar h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+  color: #fff;
+}
+.header-info-bar p {
+  margin: 0;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* === 主要内容区 === */
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 20px; /* 内容区与页眉/页脚的距离 */
 }
-
-.profile-intro {
-  padding-top: 90px;
-  text-align: center;
-  margin-bottom: 50px; /* 增加了与下方内容的距离 */
-}
-
-.profile-intro h1 {
-  margin: 0 0 10px 0; /* 为标题和下方的联系信息增加一点间距 */
-  font-size: 2em;
-}
-
-.profile-intro p {
-  font-size: 1.1em;
-  color: #666;
-}
-
 section {
-  margin-bottom: 45px; /* 统一并微调模块间距 */
+  margin-bottom: 45px;
   background-color: #fff;
-  padding: 30px; /* 增加卡片内部的“呼吸空间” */
-  border-radius: 12px; /* 边角更圆润一些 */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* 阴影更柔和 */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
-
 h2 {
   margin-top: 0;
   border-bottom: 2px solid #e6c1de;
-  padding-bottom: 15px; /* 增加标题和下方内容的距离 */
-  margin-bottom: 25px; /* 增加标题和下方内容的距离 */
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
-
-/* 【核心修改】为全局的 p 和 li 增加底部间距，解决文字拥挤问题 */
 p, li {
-  margin-bottom: 1em; /* 1em 等于当前元素的字体大小，这是一个相对单位 */
+  margin-bottom: 1em;
 }
-/* 去掉最后一个元素的下边距，让排版更规整 */
 p:last-child, li:last-child {
   margin-bottom: 0;
 }
-
 ul {
   list-style: none;
   padding-left: 0;
 }
 
+/* === 全新对齐列表布局 (核心) === */
+.structured-list li {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 左侧占3份，右侧占1份 */
+  gap: 20px; /* 列之间的间距 */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.structured-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.item-primary {
+  display: flex;
+  flex-direction: column; /* 让主内容垂直排列 */
+  gap: 8px; /* 主内容内部各项的间距 */
+}
+.item-primary b {
+  font-size: 1.1em;
+}
+.item-primary span {
+  color: #555;
+  font-size: 0.95em;
+}
+.item-description {
+  line-height: 1.5;
+}
+.item-secondary {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 让次要内容靠右对齐 */
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 0.9em;
+  color: #777;
+}
 
 /* === 按钮样式 === */
 .btn {
   display: inline-block;
-  margin-left: 10px;
   padding: 5px 12px;
   background-color: #e6c1de;
-  color: white;
+  color: white !important; /* 强制覆盖链接默认颜色 */
   border-radius: 5px;
   text-decoration: none;
   font-size: 0.85em;
   transition: background-color 0.3s;
+  text-align: center;
 }
 .btn:hover {
   background-color: #dcaed4;
 }
 
-.download-section {
+/* === 技能模块优化 (2列布局) === */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 两列布局 */
+  gap: 25px;
+}
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* 第三项（信息列表）横跨两列 */
+.skills-list-combined {
+  grid-column: 1 / -1; 
+  flex-direction: row; /* 横向排列 */
+  justify-content: space-between; /* 均匀分布 */
+  align-items: stretch;
+}
+.skills-container:not(.skills-list-combined):hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.skills-container h3 {
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.1em;
+}
+.info-block {
+  padding: 15px;
+  flex-basis: 32%; /* 每个信息块大约占1/3宽度 */
+  display: flex;
+  flex-direction: column;
+}
+.info-block h3 {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 1.15em;
+  margin: 0 0 10px 0;
+}
+.info-block h3 i {
+  font-size: 1.1em;
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+.info-block p, .info-block li {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 5px;
+  padding-left: 32px;
+}
+.info-block ul { margin: 0; padding: 0;}
+.color-border-1 { border-top: 4px solid #4D96FF; }
+.color-border-2 { border-top: 4px solid #6BCB77; }
+.color-border-3 { border-top: 4px solid #FFD93D; }
+
+/* === 下载和更多链接区域 === */
+.download-section, .more-links-section {
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  padding-top: 20px;
 }
 .download-btn {
   display: inline-block;
@@ -113,84 +208,6 @@ ul {
 }
 .download-btn:hover {
   transform: translateY(-2px);
-}
-
-/* === 技能模块优化 (解决拥挤和高度问题) === */
-.skills-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  gap: 25px;
-}
-.skills-container {
-  display: flex; /* 使用 Flex 布局让内容垂直分布 */
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background-color: #fff;
-  /* 【核心修改】移除了固定的 height: 320px; */
-  /* 这允许卡片根据内容自由伸展，解决了内容塞不下的问题！*/
-  /* Grid 布局默认会使同一行的项目等高，所以外观依然整齐。*/
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: none;
-  margin: 0;
-}
-.skills-container:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-.skills-container h3 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
-  font-size: 1.1em;
-}
-.skills-list-combined {
-  flex-grow: 1; /* 让这个容器填满剩余空间 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* 内容垂直居中 */
-  padding: 0 15px;
-}
-.info-block {
-  padding: 12px 0; /* 增加了信息块之间的垂直距离 */
-}
-.info-block h3 {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  font-size: 1.15em;
-  margin: 0 0 8px 0;
-}
-.info-block h3 i {
-  font-size: 1.1em;
-  color: #333;
-  margin-right: 12px;
-  width: 20px;
-  text-align: center;
-}
-.info-block p, .info-block li {
-  color: #555;
-  line-height: 1.5;
-  font-size: 1em; /* 稍微调整字号以获得更好的空间感 */
-  margin: 0 0 5px 0; /* 【核心修改】为列表项也增加间距 */
-  padding-left: 32px;
-}
-.info-block ul {
-  padding: 0;
-  margin: 0;
-}
-.color-border-1 { border-top: 4px solid #4D96FF; }
-.color-border-2 { border-top: 4px solid #6BCB77; }
-.color-border-3 { border-top: 4px solid #FFD93D; }
-
-/* === "More About Me" (页脚链接) 的新样式 === */
-.more-links-section {
-  text-align: center;
-  background-color: transparent;
-  box-shadow: none;
-  padding-top: 20px;
 }
 .more-links-section ul {
   max-width: 500px;
@@ -222,34 +239,25 @@ footer {
 }
 
 /* === 响应式设计 (手机端适配) === */
-@media (max-width: 992px) {
-  .skills-grid-container {
-    grid-template-columns: 1fr; /* 在平板上变为单列 */
-  }
-}
 @media (max-width: 768px) {
-  body {
-    line-height: 1.6; /* 手机端行高可以稍小一些 */
+  .structured-list li {
+    grid-template-columns: 1fr; /* 在手机上变为单列堆叠 */
+    gap: 10px;
   }
-  .top-bar {
-    height: 90px;
+  .item-secondary {
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap; /* 允许按钮换行 */
+  }
+  .skills-grid-container, .skills-list-combined {
+    grid-template-columns: 1fr; /* 所有技能模块都变为单列 */
+    flex-direction: column;
   }
   .avatar {
-    width: 120px;
+    width: 150px;
     height: 120px;
-    top: 90px;
-    border-width: 4px;
   }
-  .profile-intro {
-    padding-top: 70px;
-  }
-  .profile-intro h1 {
-    font-size: 1.5em;
-  }
-  .profile-intro p {
-    font-size: 0.9em;
-  }
-  section {
-    padding: 20px;
-  }
+  .header-info-bar h1 { font-size: 1.5em; }
+  .header-info-bar p { font-size: 0.9em; }
 }
