@@ -1,19 +1,87 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Graduation Thesis</title>
-    <link rel="stylesheet" href="style.css"> <!-- 您可以继续使用主页的样式 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thesis Details - Amber Lin</title>
+  <!-- 链接到您主页的同一个 CSS 文件，以保持风格统一 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- 同样引入图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="section">
-            <a href="index.html">< Back</a>
-            <h1></h1>
-            <p>Design and Implementation of a Microservices-Based E-commerce Platform</p>
-            <!-- 在这里添加更多关于您毕业论文的内容 -->
-        </div>
+  <!-- 我们复用主页的页眉，但只保留信息 bar 用于导航 -->
+  <header class="main-header thesis-header">
+    <div class="header-info-bar">
+      <h1>Undergraduate Thesis Project</h1>
+      <!-- 添加一个清晰的返回主页按钮 -->
+      <a href="index.html" class="back-to-home-btn"><i class="fa-solid fa-arrow-left"></i> Back to Main Page</a>
     </div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- 项目概览 -->
+    <section>
+      <h2>Project Overview: Designing and Implementing a Microservices-Based E-commerce Platform</h2>
+      <div class="project-summary">
+        <p>This project was a comprehensive, end-to-end design and implementation of a modern e-commerce platform. Moving beyond traditional monolithic structures, I adopted a microservices architecture to address key industry challenges like scalability, system stability, and ease of maintenance. My role involved the entire product development lifecycle, from initial requirement analysis to system design, implementation, and testing.</p>
+        <div class="tech-stack-highlight">
+          <strong>Core Technologies:</strong> Spring Boot, Spring Cloud Alibaba, VUE, MySQL, Redis
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心贡献与产品思维 -->
+    <section>
+      <h2><i class="fa-solid fa-lightbulb"></i> My Key Contributions & Product-Oriented Thinking</h2>
+      <ul class="contributions-list">
+        <li>
+          <h3>1. From Problem to Solution: Strategic Shift to Microservices</h3>
+          <p>I identified that monolithic architectures, while simple initially, face significant bottlenecks in performance and development agility as user traffic grows. My proposed solution was a complete architectural redesign based on microservices, which provides superior system stability and allows for independent development and deployment of different functional modules (e.g., User, Product, Order services).</p>
+        </li>
+        <li>
+          <h3>2. User-Centric Requirement Analysis</h3>
+          <p>I defined the platform's core functionalities by analyzing the needs of three key user roles: Customers, Merchants, and Administrators. I utilized <strong>UML Use Case diagrams</strong> to map out critical user journeys, such as user registration/login, product search, cart management, and the checkout process, ensuring a logical and intuitive user experience.</p>
+        </li>
+        <li>
+          <h3>3. Systematic Architecture & Module Design</h3>
+          <p>I deconstructed the complex e-commerce system into eight distinct, self-contained microservice modules. This included User Management, Product Management, Order Management, and more. This modular design, documented through comprehensive architecture diagrams, showcases my ability to break down large-scale problems into manageable, interconnected components.</p>
+        </li>
+        <li>
+          <h3>4. Data-Driven Design and Validation</h3>
+          <p>I designed the database schema using <strong>Entity-Relationship (E-R) diagrams</strong> and defined over thirteen core data tables to support the platform's functions. To ensure the final product met the initial requirements, I conducted thorough black-box functional testing to validate system viability and performance.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 论文资料展示 -->
+    <section>
+      <h2><i class="fa-solid fa-images"></i> Thesis Visual Showcase</h2>
+      <p>Here are some key excerpts and diagrams from my thesis that illustrate the project's scope and my design process.</p>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="images/thesis-cover.png" alt="Thesis Cover">
+          <p> Thesis Cover Page </p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/thesis-abstract.png" alt="Thesis Abstract">
+          <p>Project Abstract</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/thesis-architecture.png" alt="System Architecture">
+          <p>Microservices Architecture</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/thesis-usecase.png" alt="UML Use Case Diagram">
+          <p>UML Use Case Example</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Lin,Chia-Hui Amber Lin</p>
+  </footer>
+
 </body>
 </html>
