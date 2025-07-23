@@ -12,13 +12,12 @@ body {
   padding: 40px 20px 0;
   text-align: center;
 }
-/* 【核心修改1】头像变为“鹅蛋形” */
 .avatar {
   display: block;
   margin: 0 auto 25px;
-  width: 150px;  /* 宽度小于高度 */
-  height: 180px; /* 高度大于宽度 */
-  border-radius: 50%; /* 这样就会形成一个竖向的椭圆 */
+  width: 150px;
+  height: 180px;
+  border-radius: 50%;
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -139,18 +138,16 @@ ul {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 【核心修改2】为雷达图卡片设置一个合适的高度，并去掉 flex 布局 */
 .skills-container:not(.skills-list-combined) {
-  height: 350px; /* 一个恰到好处的高度 */
+  height: 350px;
 }
 .skills-container:not(.skills-list-combined):hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-/* 第三项（信息列表）横跨两列 */
 .skills-list-combined {
   grid-column: 1 / -1; 
-  display: flex; /* 这里保留 flex，用于内部信息块的排列 */
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
@@ -242,6 +239,45 @@ footer {
   color: #aaa;
 }
 
+/* === Thesis Page 专属样式 === */
+.thesis-header .header-info-bar { position: relative; padding: 15px 20px; }
+.back-to-home-btn { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: white; text-decoration: none; font-size: 1em; padding: 8px 15px; border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; transition: background-color 0.3s; }
+.back-to-home-btn:hover { background-color: rgba(255,255,255,0.1); }
+.back-to-home-btn i { margin-right: 8px; }
+.project-summary p { font-size: 1.1em; line-height: 1.7; }
+.tech-stack-highlight { margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #e6c1de; border-radius: 4px; }
+.contributions-list { padding-left: 0; list-style-type: none; }
+.contributions-list li { margin-bottom: 25px; }
+.contributions-list h3 { font-size: 1.25em; color: #333; margin-bottom: 8px; }
+.contributions-list p { color: #555; margin-bottom: 0; }
+/* --- 图片展示廊 (单列垂直布局) --- */
+.gallery-container {
+  display: block; /* 【核心修改】去掉 grid 布局，恢复为块级流式布局 */
+  max-width: 600px; /* 限制最大宽度，让图片居中且不会过宽 */
+  margin: 40px auto 0; /* 上下边距和自动水平居中 */
+}
+.gallery-item {
+  text-align: center;
+  border: none; /* 去掉边框 */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* 使用阴影来营造卡片感 */
+  padding: 0; /* 去掉内边距，让图片撑满 */
+  border-radius: 12px;
+  margin-bottom: 40px; /* 【核心修改】增加卡片之间的垂直距离 */
+  overflow: hidden; /* 确保圆角能裁剪图片 */
+}
+.gallery-item img {
+  width: 100%;
+  height: auto; /* 【核心修改】高度自适应，让图片按原比例显示 */
+  display: block; /* 去掉图片下方的微小间隙 */
+}
+.gallery-item p {
+  padding: 15px; /* 【核心修改】只给文字部分添加内边距 */
+  font-size: 1em; /* 增大说明文字 */
+  color: #666;
+  background-color: #fff;
+  margin: 0;
+}
+
 /* === 响应式设计 (手机端适配) === */
 @media (max-width: 768px) {
   .structured-list li {
@@ -254,130 +290,16 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .skills-grid-container {
+  .skills-grid-container, .skills-list-combined {
     grid-template-columns: 1fr;
-  }
-  .skills-list-combined {
     flex-direction: column;
   }
   .avatar {
     width: 120px;
-    height: 144px; /* 保持竖向椭圆比例 */
+    height: 144px;
   }
   .header-info-bar h1 { font-size: 1.5em; }
   .header-info-bar p { font-size: 0.9em; }
-}
-/* ======================================================== */
-/*          Thesis.html 页面的专属样式 (追加到末尾)         */
-/* ======================================================== */
-
-/* --- Thesis 页面的特殊页眉 --- */
-.thesis-header .header-info-bar {
-  position: relative; /* 为返回按钮定位提供基准 */
-  padding: 15px 20px;
-}
-.back-to-home-btn {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  padding: 8px 15px;
-  border: 1px solid rgba(255,255,255,0.5);
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-.back-to-home-btn:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-.back-to-home-btn i {
-  margin-right: 8px;
-}
-
-/* --- 项目概览 --- */
-.project-summary p {
-  font-size: 1.1em;
-  line-height: 1.7;
-}
-.tech-stack-highlight {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-left: 4px solid #e6c1de;
-  border-radius: 4px;
-}
-
-/* --- 核心贡献列表 --- */
-.contributions-list {
-  padding-left: 0;
-  list-style-type: none;
-}
-.contributions-list li {
-  margin-bottom: 25px;
-}
-.contributions-list h3 {
-  font-size: 1.25em;
-  color: #333;
-  margin-bottom: 8px;
-}
-.contributions-list p {
-  color: #555;
-  margin-bottom: 0;
-}
-
-/* ======================================================== */
-/*          用下面的代码替换您的旧图片展示廊 CSS              */
-/* ======================================================== */
-
-/* --- 图片展示廊 (优化后) --- */
-.gallery-container {
-  display: grid;
-  /* 在桌面端，我们最多显示4列，让卡片更紧凑 */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 20px;
-  margin-top: 20px;
-}
-.gallery-item {
-  text-align: center;
-  border: 1px solid #eee;
-  padding: 10px;
-  border-radius: 8px;
-  transition: box-shadow 0.3s, transform 0.3s;
-  display: flex; /* 使用 Flex 布局，方便控制内部元素 */
-  flex-direction: column;
-}
-.gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-/* 【核心修改】这里是关键！*/
-.gallery-item img {
-  width: 100%;
-  /* 1. 设置一个最大高度，防止图片过大 */
-  max-height: 300px;
-  /* 2. 确保图片完整显示，而不是被裁剪或拉伸 */
-  object-fit: contain; 
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-.gallery-item p {
-  font-size: 0.9em;
-  color: #777;
-  margin: 0;
-  margin-top: auto; /* 让文字描述始终在卡片底部 */
-}
-
-/* --- 响应式调整 for Thesis Page --- */
-@media (max-width: 768px) {
-  .back-to-home-btn {
-    position: static;
-    transform: none;
-    display: block;
-    margin-top: 15px;
-  }
-  .thesis-header .header-info-bar h1 {
-    font-size: 1.5em;
-  }
+  .back-to-home-btn { position: static; transform: none; display: block; margin-top: 15px; }
+  .thesis-header .header-info-bar h1 { font-size: 1.5em; }
 }
