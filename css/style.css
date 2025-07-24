@@ -268,11 +268,11 @@ footer {
 .finding-block { padding: 20px; margin-top: 30px; border-left: 4px solid #e6c1de; background-color: #fafafa; border-radius: 0 8px 8px 0; }
 .finding-block h3 { margin-top: 0; font-size: 1.25em; color: #333; }
 
-/* --- Hobbies 页面全新滑块布局 --- */
+/* --- Hobbies & Portfolio 页面全新滑块布局 --- */
 .hobbies-section { background-color: transparent; box-shadow: none; padding: 0; }
 .hobbies-intro { background-color: transparent; box-shadow: none; padding: 0; text-align: center; }
-.hobby-block { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
-.hobby-block:nth-child(even) { grid-template-columns: 1.2fr 1fr; }
+.hobby-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+.hobby-block:nth-child(even) { grid-template-columns: 1fr 1fr; }
 .hobby-block:nth-child(even) .hobby-description { order: 2; }
 .hobby-block:nth-child(even) .hobby-slider { order: 1; }
 .hobby-block:last-child { border-bottom: none; margin-bottom: 0; }
