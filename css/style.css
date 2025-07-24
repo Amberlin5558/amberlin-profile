@@ -268,36 +268,84 @@ footer {
 .finding-block { padding: 20px; margin-top: 30px; border-left: 4px solid #e6c1de; background-color: #fafafa; border-radius: 0 8px 8px 0; }
 .finding-block h3 { margin-top: 0; font-size: 1.25em; color: #333; }
 
-/* --- Hobbies & Portfolio 页面全新滑块布局 --- */
+/* === Hobbies & Portfolio 页面全新“聚光灯”布局 === */
 .hobbies-section { background-color: transparent; box-shadow: none; padding: 0; }
-.hobbies-intro { background-color: transparent; box-shadow: none; padding: 0; text-align: center; }
-.hobby-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
-.hobby-block:nth-child(even) { grid-template-columns: 1fr 1fr; }
-.hobby-block:nth-child(even) .hobby-description { order: 2; }
-.hobby-block:nth-child(even) .hobby-slider { order: 1; }
-.hobby-block:last-child { border-bottom: none; margin-bottom: 0; }
-.hobby-description h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.5em; color: #333; display: flex; align-items: center; }
-.hobby-description h3 i { color: #e6c1de; margin-right: 15px; font-size: 1.2em; }
-.hobby-description p { color: #555; font-size: 1em; line-height: 1.7; }
-.hobby-slider .swiper { width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-.hobby-slider .swiper-slide { aspect-ratio: 4 / 3; }
-.hobby-slider .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
-.swiper-button-next, .swiper-button-prev { color: #fff !important; }
-.swiper-pagination-bullet-active { background: #fff !important; }
+.hobbies-intro { background-color: transparent; box-shadow: none; padding: 20px 0; text-align: center; }
+.hobby-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+/* 交替布局 */
+.hobby-block:nth-child(even) {
+    flex-direction: row-reverse; /* 关键：反转图文顺序 */
+}
+.hobby-description, .hobby-slider {
+    flex: 1; /* 图文各占一半空间 */
+}
+.hobby-description h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.hobby-description h3 i {
+    color: #fff;
+    background-color: #e6c1de; /* 图标背景使用主题粉色 */
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 0.8em;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.hobby-description p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.7;
+}
+/* Swiper 滑块样式 */
+.hobby-slider .swiper {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.hobby-slider .swiper-slide {
+    aspect-ratio: 3 / 4; /*【核心修改】让图片变成更优雅的竖向比例 */
+}
+.hobby-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: #fff !important;
+}
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+}
 
 /* === 响应式设计 (手机端适配) === */
 @media (max-width: 768px) {
   .structured-list li { grid-template-columns: 1fr; gap: 10px; }
   .item-secondary { text-align: left; align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
-  .skills-grid-container { grid-template-columns: 1fr; }
-  .skills-list-combined { flex-direction: column; }
+  .skills-grid-container, .skills-list-combined { grid-template-columns: 1fr; flex-direction: column; }
   .avatar { width: 120px; height: 144px; }
   .header-info-bar h1 { font-size: 1.5em; }
   .header-info-bar p { font-size: 0.9em; }
   .back-to-home-btn { position: static; transform: none; display: block; margin: 15px auto 0; width: fit-content; }
   .thesis-header .header-info-bar { text-align: center; }
   .thesis-header .header-info-bar h1 { font-size: 1.5em; }
-  .hobby-block, .hobby-block:nth-child(even) { grid-template-columns: 1fr; }
-  .hobby-block:nth-child(even) .hobby-description, .hobby-block:nth-child(even) .hobby-slider { order: 0; }
+  /* Hobbies & Portfolio 响应式 */
+  .hobby-block, .hobby-block:nth-child(even) {
+    flex-direction: column; /* 手机上全部变为垂直堆叠 */
+    padding: 20px;
+  }
   .hobby-description h3 { font-size: 1.3em; }
 }
