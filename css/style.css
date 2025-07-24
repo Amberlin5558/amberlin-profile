@@ -239,173 +239,65 @@ footer {
   color: #aaa;
 }
 
-/* === Thesis Page 专属样式 === */
+/* === Project & Thesis Page 专属样式 === */
 .thesis-header .header-info-bar { position: relative; padding: 15px 20px; }
-./* ======================================================== */
-/*          用下面的代码替换您的旧返回按钮 CSS                */
-/* ======================================================== */
-
-/* --- Thesis 页面的返回按钮 (优化后) --- */
 .back-to-home-btn {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  
-  /* --- 【核心修改】颜色和尺寸 --- */
-  background-color: #f5f5dc; /* 米黄色 (Beige) */
-  color: #5d4037;           /* 深棕色文字，搭配米黄色更显质感 */
-  font-size: 0.85em;         /* 缩小字体 */
-  padding: 6px 12px;         /* 缩小内边距，让按钮变小 */
-  
-  text-decoration: none;
-  border: none;              /* 去掉边框 */
-  border-radius: 6px;        /* 调整圆角以匹配新尺寸 */
-  transition: all 0.3s ease;
+    position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+    background-color: #f5f5dc; color: #5d4037; font-size: 0.85em;
+    padding: 6px 12px; text-decoration: none; border: none;
+    border-radius: 6px; transition: all 0.3s ease;
 }
-
 .back-to-home-btn:hover {
-  background-color: #eaeac9; /* 鼠标悬浮时颜色加深一点 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 添加一点微弱的阴影 */
-  transform: translateY(-52%); /* 轻微上移，增加动感 */
+    background-color: #eaeac9; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-52%);
 }
-
-.back-to-home-btn i {
-  margin-right: 6px; /* 调整图标和文字的间距 */
-}
+.back-to-home-btn i { margin-right: 6px; }
 .project-summary p { font-size: 1.1em; line-height: 1.7; }
 .tech-stack-highlight { margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #e6c1de; border-radius: 4px; }
 .contributions-list { padding-left: 0; list-style-type: none; }
 .contributions-list li { margin-bottom: 25px; }
 .contributions-list h3 { font-size: 1.25em; color: #333; margin-bottom: 8px; }
 .contributions-list p { color: #555; margin-bottom: 0; }
-/* --- 图片展示廊 (单列垂直布局) --- */
-.gallery-container {
-  display: block; /* 【核心修改】去掉 grid 布局，恢复为块级流式布局 */
-  max-width: 600px; /* 限制最大宽度，让图片居中且不会过宽 */
-  margin: 40px auto 0; /* 上下边距和自动水平居中 */
-}
-.gallery-item {
-  text-align: center;
-  border: none; /* 去掉边框 */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* 使用阴影来营造卡片感 */
-  padding: 0; /* 去掉内边距，让图片撑满 */
-  border-radius: 12px;
-  margin-bottom: 40px; /* 【核心修改】增加卡片之间的垂直距离 */
-  overflow: hidden; /* 确保圆角能裁剪图片 */
-}
-.gallery-item img {
-  width: 100%;
-  height: auto; /* 【核心修改】高度自适应，让图片按原比例显示 */
-  display: block; /* 去掉图片下方的微小间隙 */
-}
-.gallery-item p {
-  padding: 15px; /* 【核心修改】只给文字部分添加内边距 */
-  font-size: 1em; /* 增大说明文字 */
-  color: #666;
-  background-color: #fff;
-  margin: 0;
-}
+.gallery-container { display: block; max-width: 600px; margin: 40px auto 0; }
+.gallery-item { text-align: center; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.1); padding: 0; border-radius: 12px; margin-bottom: 40px; overflow: hidden; }
+.gallery-item img { width: 100%; height: auto; display: block; }
+.gallery-item p { padding: 15px; font-size: 1em; color: #666; background-color: #fff; margin: 0; }
+.project-image-showcase { margin: 25px auto 35px; max-width: 700px; text-align: center; }
+.project-image-showcase img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+.image-caption { display: block; margin-top: 12px; font-size: 0.9em; color: #888; font-style: italic; }
+.finding-block { padding: 20px; margin-top: 30px; border-left: 4px solid #e6c1de; background-color: #fafafa; border-radius: 0 8px 8px 0; }
+.finding-block h3 { margin-top: 0; font-size: 1.25em; color: #333; }
+
+/* --- Hobbies 页面全新滑块布局 --- */
+.hobbies-section { background-color: transparent; box-shadow: none; padding: 0; }
+.hobbies-intro { background-color: transparent; box-shadow: none; padding: 0; text-align: center; }
+.hobby-block { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+.hobby-block:nth-child(even) { grid-template-columns: 1.2fr 1fr; }
+.hobby-block:nth-child(even) .hobby-description { order: 2; }
+.hobby-block:nth-child(even) .hobby-slider { order: 1; }
+.hobby-block:last-child { border-bottom: none; margin-bottom: 0; }
+.hobby-description h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.5em; color: #333; display: flex; align-items: center; }
+.hobby-description h3 i { color: #e6c1de; margin-right: 15px; font-size: 1.2em; }
+.hobby-description p { color: #555; font-size: 1em; line-height: 1.7; }
+.hobby-slider .swiper { width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+.hobby-slider .swiper-slide { aspect-ratio: 4 / 3; }
+.hobby-slider .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+.swiper-button-next, .swiper-button-prev { color: #fff !important; }
+.swiper-pagination-bullet-active { background: #fff !important; }
 
 /* === 响应式设计 (手机端适配) === */
 @media (max-width: 768px) {
-  .structured-list li {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .item-secondary {
-    text-align: left;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .skills-grid-container, .skills-list-combined {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-  }
-  .avatar {
-    width: 120px;
-    height: 144px;
-  }
+  .structured-list li { grid-template-columns: 1fr; gap: 10px; }
+  .item-secondary { text-align: left; align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  .skills-grid-container { grid-template-columns: 1fr; }
+  .skills-list-combined { flex-direction: column; }
+  .avatar { width: 120px; height: 144px; }
   .header-info-bar h1 { font-size: 1.5em; }
   .header-info-bar p { font-size: 0.9em; }
-  .back-to-home-btn { position: static; transform: none; display: block; margin-top: 15px; }
+  .back-to-home-btn { position: static; transform: none; display: block; margin: 15px auto 0; width: fit-content; }
+  .thesis-header .header-info-bar { text-align: center; }
   .thesis-header .header-info-bar h1 { font-size: 1.5em; }
-}
-/* ======================================================== */
-/*          Hobbies.html 页面的专属样式 (追加到末尾)        */
-/* ======================================================== */
-
-.hobbies-section {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-}
-.hobbies-grid {
-    display: grid;
-    /* 在桌面端，我们设置为2列 */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; /* 卡片之间的间距 */
-}
-
-.hobby-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow: hidden; /* 确保图片圆角生效 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-.hobby-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.hobby-image {
-    height: 250px; /* 固定图片容器高度，让卡片对齐 */
-    overflow: hidden;
-}
-.hobby-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 图片填充容器，不变形 */
-    transition: transform 0.4s ease;
-}
-.hobby-card:hover .hobby-image img {
-    transform: scale(1.05); /* 鼠标悬浮时图片轻微放大 */
-}
-
-.hobby-content {
-    padding: 25px;
-    flex-grow: 1; /* 让内容区域填满剩余空间 */
-    display: flex;
-    flex-direction: column;
-}
-.hobby-content h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.25em;
-    color: #333;
-    display: flex;
-    align-items: center;
-}
-.hobby-content h3 i {
-    color: #e6c1de; /* 图标使用您的主题粉色 */
-    margin-right: 12px;
-    font-size: 1.1em;
-}
-.hobby-content p {
-    color: #666;
-    font-size: 0.95em;
-    margin-bottom: 0;
-    flex-grow: 1;
-}
-
-/* === 响应式调整 for Hobbies Page === */
-@media (max-width: 768px) {
-    /* 在手机上，卡片变为单列布局 */
-    .hobbies-grid {
-        grid-template-columns: 1fr;
-    }
+  .hobby-block, .hobby-block:nth-child(even) { grid-template-columns: 1fr; }
+  .hobby-block:nth-child(even) .hobby-description, .hobby-block:nth-child(even) .hobby-slider { order: 0; }
+  .hobby-description h3 { font-size: 1.3em; }
 }
