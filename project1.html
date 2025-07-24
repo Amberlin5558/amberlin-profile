@@ -2,33 +2,96 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>哪吒2 社交媒体数据分析与定位策略 - 项目详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details: Nezha Box Office Analysis</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>哪吒2 社交媒体数据分析与定位策略</h1>
+  <header class="main-header thesis-header">
+    <div class="header-info-bar">
+      <h1>Project: Nezha Audience & Box Office Analysis</h1>
+      <a href="index.html" class="back-to-home-btn"><i class="fa-solid fa-arrow-left"></i> Back to Main Page</a>
+    </div>
   </header>
 
-  <section>
-    <h2>项目简介</h2>
-    <p>这里写项目的详细介绍，比如分析背景、过程、结果等。</p>
+  <main class="content-wrapper">
+    <!-- 项目概览 -->
+    <section>
+      <h2><i class="fa-solid fa-bullseye"></i> Project Goal & My Role</h2>
+      <p>This project aimed to dissect the key factors driving audience satisfaction and box office performance for the film "Nezha." My primary role was to conduct a multi-faceted data analysis, combining quantitative statistical methods with qualitative text mining to generate actionable insights for stakeholders like producers and marketing teams.</p>
+    </section>
 
-    <h2>项目展示</h2>
-    <!-- 这里可以放PPT的嵌入，图片，文字等 -->
+    <!-- 分析流程 -->
+    <section>
+      <h2><i class="fa-solid fa-sitemap"></i> Analysis Framework & Methodology</h2>
+      <p>To ensure a structured and comprehensive analysis, I followed a four-stage process, from initial planning and data collection to modeling and final strategic recommendations.</p>
+      <div class="project-image-showcase">
+        <img src="images/nezha-process.png" alt="Project Process">
+        <p class="image-caption">My structured four-stage project workflow.</p>
+      </div>
+    </section>
+    
+    <!-- 核心分析与发现 -->
+    <section>
+        <h2><i class="fa-solid fa-magnifying-glass-chart"></i> Key Analysis & Findings</h2>
+        
+        <!-- 发现1: 用户画像 -->
+        <div class="finding-block">
+            <h3>Finding 1: The audience is predominantly young, educated, and media-savvy.</h3>
+            <p>Demographic analysis revealed that the core audience consists of young, active individuals with strong educational backgrounds. This user profile is highly receptive to online promotions and values content with strong visuals and social sharing potential, providing a clear target for marketing efforts.</p>
+            <div class="project-image-showcase">
+                <img src="images/nezha-demographics1.png" alt="Audience Demographics - Age and Gender">
+                <p class="image-caption">Age and gender distribution showed a balanced, predominantly young sample.</p>
+            </div>
+            <div class="project-image-showcase">
+                <img src="images/nezha-demographics2.png" alt="Audience Demographics - Occupation and Education">
+                <p class="image-caption">The audience sample is dominated by students and employees with high educational attainment.</p>
+            </div>
+        </div>
 
-    <!-- 示例嵌入PDF（需你上传PDF文件） -->
-  <!--iframe src="project1-presentation.pdf" width="800" height="600"></iframe -->
+        <!-- 发现2: 文本挖掘 -->
+        <div class="finding-block">
+            <h3>Finding 2: "Character & Story" are the most discussed elements, with positive sentiment dominating.</h3>
+            <p>By scraping and analyzing 500 Weibo comments using Python, I found that narrative and character development were the most frequently mentioned assets. Sentiment analysis confirmed strong audience approval, with 66.8% of comments being neutral and 28.6% positive, indicating that the film's core content deeply resonated with viewers.</p>
+            <div class="project-image-showcase">
+                <img src="images/nezha-textmining1.png" alt="Text Mining - Keyword Frequency">
+                <p class="image-caption">Keyword frequency chart highlighting the importance of "Character & Story".</p>
+            </div>
+            <div class="project-image-showcase">
+                <img src="images/nezha-textmining2.png" alt="Text Mining - Sentiment Analysis">
+                <p class="image-caption">Sentiment distribution confirming strong positive audience reception.</p>
+            </div>
+        </div>
 
-    <!-- 示例图片 -->
-    <!--img src="images/project1-img1.jpg" alt="项目图片1" style="max-width: 100%; margin-top: 10px;" / -->
-  </section>
+        <!-- 发现3: 多元回归 -->
+        <div class="finding-block">
+            <h3>Finding 3: Production quality has a stronger impact on satisfaction than promotional efforts.</h3>
+            <p>I built two multiple regression models to compare the influence of production-related factors (e.g., source material, visuals) versus promotional factors (e.g., advertising, word-of-mouth). The results showed that the production model (R² = 0.713) had a significantly higher explanatory power. Notably, "Word of Mouth" was the most potent promotional driver, suggesting that organic marketing is more effective than traditional advertising for this type of content.</p>
+            <div class="project-image-showcase">
+                <img src="images/nezha-regression1.png" alt="Multiple Regression - Beta Coefficients">
+                <p class="image-caption">Standardized Beta Coefficients showing the relative influence of each factor.</p>
+            </div>
+             <div class="project-image-showcase">
+                <img src="images/nezha-regression2.png" alt="Multiple Regression - R-squared and p-values">
+                <p class="image-caption">Model comparison and p-value heatmap indicating factor significance.</p>
+            </div>
+        </div>
+    </section>
 
-  <p><a href="index.html" class="btn">返回主页</a></p>
+    <!-- 结论与建议 -->
+    <section>
+      <h2><i class="fa-solid fa-bullhorn"></i> Strategic Recommendations</h2>
+      <p>Based on the data-driven findings, I formulated targeted recommendations for key stakeholders to guide future investment and marketing strategies.</p>
+      <div class="project-image-showcase">
+        <img src="images/nezha-conclusion.png" alt="Conclusion and Suggestions">
+        <p class="image-caption">Actionable suggestions for producers, investors, and marketing teams.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 林珈卉 Amber Lin</p>
+    <p>© 2025 Lin,Chia-Hui Amber Lin</p>
   </footer>
 </body>
 </html>

@@ -332,3 +332,80 @@ footer {
   .back-to-home-btn { position: static; transform: none; display: block; margin-top: 15px; }
   .thesis-header .header-info-bar h1 { font-size: 1.5em; }
 }
+/* ======================================================== */
+/*          Hobbies.html 页面的专属样式 (追加到末尾)        */
+/* ======================================================== */
+
+.hobbies-section {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+.hobbies-grid {
+    display: grid;
+    /* 在桌面端，我们设置为2列 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; /* 卡片之间的间距 */
+}
+
+.hobby-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden; /* 确保图片圆角生效 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.hobby-image {
+    height: 250px; /* 固定图片容器高度，让卡片对齐 */
+    overflow: hidden;
+}
+.hobby-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 图片填充容器，不变形 */
+    transition: transform 0.4s ease;
+}
+.hobby-card:hover .hobby-image img {
+    transform: scale(1.05); /* 鼠标悬浮时图片轻微放大 */
+}
+
+.hobby-content {
+    padding: 25px;
+    flex-grow: 1; /* 让内容区域填满剩余空间 */
+    display: flex;
+    flex-direction: column;
+}
+.hobby-content h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.25em;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.hobby-content h3 i {
+    color: #e6c1de; /* 图标使用您的主题粉色 */
+    margin-right: 12px;
+    font-size: 1.1em;
+}
+.hobby-content p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* === 响应式调整 for Hobbies Page === */
+@media (max-width: 768px) {
+    /* 在手机上，卡片变为单列布局 */
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+}
